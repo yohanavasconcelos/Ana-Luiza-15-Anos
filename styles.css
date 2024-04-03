@@ -118,7 +118,7 @@ body{
 .icones{
     display: flex;
     margin-top: 2.6em;
-    margin-left: 2.4em;
+    margin-left: 2.8em;
 }
 
 .traje{
@@ -137,6 +137,7 @@ body{
     width: 1.8em;
     height: 1.8em;
 }
+
 .codigo_vestimenta{
     padding-top: 0.8em;
     padding-left: 0.8em;
@@ -171,6 +172,7 @@ body{
     background-color: var(--cor-fundo-icones);
     padding: 1.8em 1em 0.8em;
     border-radius: 2em;
+    
         
 }
 .localizacao_{
@@ -194,11 +196,37 @@ body{
     transform: translate(-50%, -50%); /* Centraliza o modal */
     z-index: 9999; /* Garante que o modal esteja acima de outros elementos */            
 }
+#modal-nome{
+    width: 15em;
+    height: 17.8em;
+    left: 12em;
+}
 .fechar{
     margin-left: 10.6em;
     border-radius: 1em;
     border: none;
     background-color: red;
+}
+#fechar{
+    margin-left: 16.4em;
+}
+
+#mensagem-convites{
+    color: var(--cor-traje-aviso);
+    font-size: 20px;
+    font-family: var(--fonte-principal);
+    margin-left: 0.6em;
+}
+.confirmacao-nome{
+    align-items: center;
+    margin-top: -0.5em;
+    margin-left: 0.5em;
+    font-size: 20px;
+    color: var(--cor-traje-aviso);
+}
+
+#mensagem-convites{
+    padding-right: 0.2em;
 }
 
 .traje-conteiner{
