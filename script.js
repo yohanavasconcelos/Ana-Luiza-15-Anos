@@ -99,8 +99,6 @@ window.onload = function() {
             "Enzo" : 1,
             "Giulia" : 1,
 
-
-            
         };
 
         
@@ -113,7 +111,7 @@ window.onload = function() {
             mensagemConvites.textContent = "Olá " + nome + "! Com base no seu nome, estimamos que você tem direito a " + numeroDeConvites + " convite(s).";
         }else{
             var mensagemConvites = document.getElementById("mensagem-convites");
-            mensagemConvites.textContent = "Você não está na lista de convidados";
+            mensagemConvites.textContent = "Você não está na lista de convidados ou digitou seu nome errado por favor tente novamente";
         }
 
         
