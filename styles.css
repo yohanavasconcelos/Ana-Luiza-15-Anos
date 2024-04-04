@@ -118,7 +118,7 @@ body{
 .icones{
     display: flex;
     margin-top: 2.6em;
-    margin-left: 2.8em;
+    margin-left: 1.2em;
 }
 
 .traje{
@@ -146,7 +146,7 @@ body{
 }
 
 .sua-presenca{
-    padding-left: 2.5em;
+    padding-left: 2em;
 }
 
 .confirmacao{
@@ -199,7 +199,8 @@ body{
 #modal-nome{
     width: 15em;
     height: 17.8em;
-    left: 12em;
+    left: 5em;
+    top: 25em;
 }
 .fechar{
     margin-left: 10.6em;

@@ -2,6 +2,8 @@
 function abrirModalNome() {
     var modalNome = document.getElementById("modal-nome");
     modalNome.style.display = "block";
+
+
 }
 
 // Função para fechar o modal do nome
@@ -101,26 +103,68 @@ window.onload = function() {
             
         };
 
-
-        var numeroDeConvites = convitesPorPessoa[nome];
-
-
-        var mensagemConvites = document.getElementById("mensagem-convites");
-        mensagemConvites.innerHTML = "";
-        mensagemConvites.textContent = "Olá " + nome + "! Com base no seu nome, estimamos que você tem direito a " + numeroDeConvites + " convite(s).";
         
-        mensagemConvites.innerText = novaMensagem;
-        
-        // Fechar o modal do nome após envio do formulário
-        fecharModalNome();
-    });
+        if(nome.trim() in convitesPorPessoa){
+            var numeroDeConvites = convitesPorPessoa[nome];
 
-    // Ocultar os modais ao carregar a página
-    var modalTraje = document.getElementById("modal-traje");
-    var modalNome = document.getElementById("modal-nome");
-    modalTraje.style.display = "none";
-    modalNome.style.display = "none";
-}
+            var mensagemConvites = document.getElementById("mensagem-convites");
+           
+            mensagemConvites.innerHTML = "";
+            mensagemConvites.textContent = "Olá " + nome + "! Com base no seu nome, estimamos que você tem direito a " + numeroDeConvites + " convite(s).";
+        }else{
+            var mensagemConvites = document.getElementById("mensagem-convites");
+            mensagemConvites.textContent = "Você não está na lista de convidados";
+        }
+
+        
+
+        var nomesConfirmados = [];
+
+        // Event listener para o envio do formulário do nome
+        formNome.addEventListener("submit", function(event) {
+            event.preventDefault(); // Evitar comportamento padrão de envio do formulário
+
+            var nome = document.getElementById("nome").value;
+
+            // Verificar se o nome já foi confirmado anteriormente
+            if (nomesConfirmados.includes(nome)) {
+               
+            var mensagemConvites = document.getElementById("mensagem-convites");
+           
+            mensagemConvites.innerHTML = "";
+            mensagemConvites.textContent = "Você já confirmou sua presença";
+            
+                return;
+            }
+
+            // Adicionar o nome à lista de nomes confirmados
+            nomesConfirmados.push(nome);
+
+            // Armazenar os nomes confirmados no localStorage
+            localStorage.setItem("nomesConfirmados", JSON.stringify(nomesConfirmados));
+
+            // Restante do seu código...
+        });
+
+        // Verificar nomes confirmados ao carregar a página
+        window.onload = function() {
+            // Verificar se existem nomes confirmados armazenados
+            var nomesConfirmadosArmazenados = localStorage.getItem("nomesConfirmados");
+            if (nomesConfirmadosArmazenados) {
+                nomesConfirmados = JSON.parse(nomesConfirmadosArmazenados);
+            }
+        };
+                
+                // Fechar o modal do nome após envio do formulário
+                // fecharModalNome();
+            });
+
+            // Ocultar os modais ao carregar a página
+            var modalTraje = document.getElementById("modal-traje");
+            var modalNome = document.getElementById("modal-nome");
+            modalTraje.style.display = "none";
+            modalNome.style.display = "none";
+        }
 
 // Função para estimar o número de convites
 function estimarNumeroDeConvites(nome) {
@@ -129,3 +173,4 @@ function estimarNumeroDeConvites(nome) {
     // Por exemplo, retornar o comprimento do nome como uma estimativa simples
     return nome.length;
 }
+
