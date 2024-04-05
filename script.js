@@ -50,7 +50,8 @@ window.onload = function() {
 
         // Validar se o nome foi inserido
         if (nome.trim() === "") {
-            alert("Por favor, insira seu nome.");
+            var mensagemConvites = document.getElementById("mensagem-convites");
+            mensagemConvites.textContent = "Por favor, insira seu nome.";
             return;
         }
 
