@@ -82,7 +82,7 @@ window.onload = function() {
             "Amanda" : 1,
             "Yara" : 1,
             "Airtes" : 1,
-            "Késia" : 1,
+            "Isabella" : 1,
             "Thaís" : 1,
             "Marilúcia" : 1,
             "Evandro" : 2,
@@ -99,6 +99,7 @@ window.onload = function() {
             "Lucas" : 1,
             "Enzo" : 1,
             "Giulia" : 1,
+            "Ynara" : 2,
 
         };
 
