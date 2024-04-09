@@ -86,7 +86,7 @@ window.onload = function() {
             "Thaís" : 1,
             "Marilúcia" : 1,
             "Evandro" : 2,
-            "Sílva" : 4,
+            "Sílva" : 5,
             "Jocylma" : 2,
             "Lucyanne" : 4,
             "Bruna" : 1,
