@@ -100,6 +100,7 @@ window.onload = function() {
             "Enzo" : 1,
             "Giulia" : 1,
             "Ynara" : 2,
+            "Ronnan" : 1,
 
         };
 
